@@ -39,7 +39,7 @@ export default function AddSpending() {
                 required
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full rounded-2xl bg-slate-800 border-2 border-slate-700 pl-12 p-4 text-2xl font-extrabold text-slate-100 focus:focus:bg-slate-900 focus:border-pink-500 outline-none transition-all placeholder:placeholder:text-slate-600" 
+                className="w-full rounded-2xl bg-slate-800 border-2 border-slate-700 pl-12 p-4 text-2xl font-extrabold text-slate-100 focus:bg-slate-900 focus:border-pink-500 outline-none transition-all placeholder:text-slate-600" 
                 placeholder="0.00" 
                 autoFocus
               />
@@ -73,7 +73,7 @@ export default function AddSpending() {
               required
               value={date}
               onChange={(e) => setDate(e.target.value)}
-              className="w-full rounded-2xl bg-slate-800 border-2 border-slate-700 p-4 text-slate-300 font-bold focus:focus:bg-slate-900 focus:border-pink-500 outline-none transition-all" 
+              className="w-full rounded-2xl bg-slate-800 border-2 border-slate-700 p-4 text-slate-300 font-bold focus:bg-slate-900 focus:border-pink-500 outline-none transition-all" 
             />
           </div>
 
@@ -85,7 +85,7 @@ export default function AddSpending() {
               type="text" 
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              className="w-full rounded-2xl bg-slate-800 border-2 border-slate-700 p-4 text-slate-300 font-bold focus:focus:bg-slate-900 focus:border-pink-500 outline-none transition-all placeholder:placeholder:text-slate-600" 
+              className="w-full rounded-2xl bg-slate-800 border-2 border-slate-700 p-4 text-slate-300 font-bold focus:bg-slate-900 focus:border-pink-500 outline-none transition-all placeholder:text-slate-600" 
               placeholder="What did you spend on?" 
             />
           </div>

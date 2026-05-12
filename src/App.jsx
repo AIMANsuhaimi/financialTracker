@@ -17,7 +17,7 @@ function Navbar() {
 
   return (
     <div className="fixed bottom-6 left-0 right-0 px-6 z-50 pointer-events-none flex justify-center">
-      <nav className="w-full max-w-md bg-white/bg-slate-900/80 backdrop-blur-xl border border-white/border-slate-800 shadow-2xl rounded-3xl pointer-events-auto">
+      <nav className="w-full max-w-md bg-slate-900/80 backdrop-blur-xl border border-slate-800 shadow-2xl rounded-3xl pointer-events-auto">
         <div className="flex justify-around items-center h-16 px-2 relative">
           <Link to="/" className={`flex flex-col items-center transition-all duration-300 ${isActive('/')}`}>
             <Home className="w-6 h-6" strokeWidth={2.5} />
@@ -91,10 +91,10 @@ function App() {
       </div>
 
       <div className="max-w-md mx-auto relative z-10 pb-28 min-h-screen flex flex-col">
-        <header className="px-6 py-6 pt-10 sticky top-0 z-20 backdrop-blur-md bg-white/bg-slate-900/30 border-b border-white/border-slate-800 transition-colors duration-500">
+        <header className="px-6 py-6 pt-10 sticky top-0 z-20 backdrop-blur-md bg-slate-900/30 border-b border-slate-800 transition-colors duration-500">
           <div className="flex items-center justify-between">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-pink-500 flex items-center justify-center shadow-lg shadow-none">
+              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-pink-500 flex items-center justify-center shadow-lg">
                 <Wallet className="w-4 h-4 text-white" strokeWidth={3} />
               </div>
               <h1 className="text-2xl font-extrabold tracking-tight text-slate-100 transition-colors duration-500">
@@ -103,7 +103,7 @@ function App() {
             </Link>
             
             <div className="flex items-center gap-2">
-              <Link to="/settings" className="w-10 h-10 rounded-full bg-slate-800 hover:hover:bg-slate-700 transition-colors border-2 border-slate-700 shadow-sm flex items-center justify-center text-slate-300">
+              <Link to="/settings" className="w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 transition-colors border-2 border-slate-700 shadow-sm flex items-center justify-center text-slate-300">
                 <SettingsIcon className="w-5 h-5" />
               </Link>
             </div>

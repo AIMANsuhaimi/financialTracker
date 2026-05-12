@@ -105,12 +105,12 @@ export default function Settings({ onLogout }) {
         <div>
           <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">Data Backup</h3>
           <div className="grid grid-cols-2 gap-3">
-            <button onClick={handleExport} className="flex flex-col items-center justify-center p-4 bg-slate-800 border border-slate-700 rounded-2xl hover:hover:border-indigo-500 transition-colors group">
+            <button onClick={handleExport} className="flex flex-col items-center justify-center p-4 bg-slate-800 border border-slate-700 rounded-2xl hover:border-indigo-500 transition-colors group">
               <Download className="w-6 h-6 text-slate-400 group-hover:text-indigo-500 mb-2" />
               <span className="text-sm font-bold text-slate-300">Export JSON</span>
             </button>
             
-            <label className="flex flex-col items-center justify-center p-4 bg-slate-800 border border-slate-700 rounded-2xl hover:hover:border-indigo-500 transition-colors cursor-pointer group">
+            <label className="flex flex-col items-center justify-center p-4 bg-slate-800 border border-slate-700 rounded-2xl hover:border-indigo-500 transition-colors cursor-pointer group">
               <Upload className="w-6 h-6 text-slate-400 group-hover:text-indigo-500 mb-2" />
               <span className="text-sm font-bold text-slate-300">Import JSON</span>
               <input type="file" accept=".json" className="hidden" onChange={handleImport} />
@@ -121,7 +121,7 @@ export default function Settings({ onLogout }) {
         {/* Account */}
         <div>
           <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">Account</h3>
-          <button onClick={onLogout} className="w-full flex items-center justify-center gap-2 p-4 bg-rose-900/20 text-rose-400 border border-rose-900 rounded-2xl hover:hover:bg-rose-900/40 transition-colors font-bold">
+          <button onClick={onLogout} className="w-full flex items-center justify-center gap-2 p-4 bg-rose-900/20 text-rose-400 border border-rose-900 rounded-2xl hover:bg-rose-900/40 transition-colors font-bold">
             <LogOut className="w-5 h-5" /> Lock App
           </button>
         </div>

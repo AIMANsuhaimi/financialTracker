@@ -48,12 +48,12 @@ export default function Summary() {
       </div>
       
       <div className="grid grid-cols-2 gap-4">
-        <div className="glass-card p-5 relative overflow-hidden group">
+        <div className="glass-card p-5 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
           <div className="absolute top-0 right-0 w-16 h-16 bg-pink-900/20 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
           <h3 className="text-[11px] text-slate-500 font-bold uppercase tracking-wider mb-1">Total Spent</h3>
           <p className="text-2xl font-extrabold text-slate-100">RM {totalSpent.toFixed(2)}</p>
         </div>
-        <div className="glass-card p-5 relative overflow-hidden group">
+        <div className="glass-card p-5 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
           <div className="absolute top-0 right-0 w-16 h-16 bg-indigo-900/20 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-110"></div>
           <h3 className="text-[11px] text-slate-500 font-bold uppercase tracking-wider mb-1">Daily Avg</h3>
           <p className="text-2xl font-extrabold text-slate-100">RM {dailyAvg.toFixed(2)}</p>
@@ -109,7 +109,7 @@ export default function Summary() {
             ))}
           </div>
         ) : (
-          <div className="text-center py-12 bg-slate-50/bg-slate-800/30 rounded-2xl border border-dashed border-slate-700">
+          <div className="text-center py-12 bg-slate-800/30 rounded-2xl border border-dashed border-slate-700">
             <p className="text-slate-500 font-medium text-sm">No spending recorded this month.</p>
           </div>
         )}

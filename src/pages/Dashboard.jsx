@@ -83,7 +83,7 @@ export default function Dashboard() {
         <div className="space-y-3">
           {transactions.length > 0 ? (
             transactions.map(tx => (
-              <div key={tx.id} className="flex justify-between items-center bg-slate-800/50 p-4 rounded-2xl border border-slate-700/50 group">
+              <div key={tx.id} className="flex justify-between items-center bg-slate-800/50 p-4 rounded-2xl border border-slate-700/50 group hover:scale-[1.02] transition-transform duration-200">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-pink-900/20 text-pink-500 flex items-center justify-center">
                     <Tag className="w-4 h-4" />
@@ -102,7 +102,7 @@ export default function Dashboard() {
               </div>
             ))
           ) : (
-            <div className="text-center py-10 bg-slate-50/bg-slate-800/30 rounded-2xl border border-dashed border-slate-700">
+            <div className="text-center py-10 bg-slate-800/30 rounded-2xl border border-dashed border-slate-700">
               <p className="text-slate-500 font-bold text-sm">No spending recorded today.</p>
             </div>
           )}

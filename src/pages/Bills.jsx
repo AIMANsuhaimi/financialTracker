@@ -35,12 +35,12 @@ export default function Bills() {
   };
 
   return (
-    <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 pb-20">
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-extrabold text-slate-800 tracking-tight">Upcoming Bills</h2>
+        <h2 className="text-2xl font-extrabold text-slate-100 tracking-tight">Upcoming Bills</h2>
         <button 
           onClick={() => setShowForm(!showForm)}
-          className="flex items-center gap-1 text-sm bg-indigo-100 text-indigo-700 px-4 py-2 rounded-xl font-bold hover:bg-indigo-200 transition-colors shadow-sm"
+          className={`flex items-center gap-1 text-sm px-4 py-2 rounded-xl font-bold transition-all shadow-sm ${showForm ? 'bg-rose-900/20 text-rose-400 border border-rose-900/50' : 'bg-indigo-900/30 text-indigo-400 border border-indigo-900/50 hover:bg-indigo-900/50'}`}
         >
           {showForm ? 'Cancel' : <><Plus className="w-4 h-4"/> Add</>}
         </button>
@@ -49,13 +49,13 @@ export default function Bills() {
       {showForm && (
         <div className="glass-card p-6 border-t-4 border-t-indigo-500 animate-in slide-in-from-top-4">
           <form className="space-y-4" onSubmit={handleAddBill}>
-            <input required type="text" placeholder="Bill Title" value={title} onChange={e => setTitle(e.target.value)} className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-3 text-sm font-bold outline-none focus:bg-white focus:border-indigo-500 transition-colors" />
+            <input required type="text" placeholder="Bill Title" value={title} onChange={e => setTitle(e.target.value)} className="w-full bg-slate-800/50 border-2 border-slate-700/50 rounded-xl p-3 text-sm font-bold text-slate-100 outline-none focus:bg-slate-800 focus:border-indigo-500 transition-colors placeholder:text-slate-500" />
             <div className="flex gap-4">
               <div className="relative flex-1">
-                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-sm">RM</span>
-                <input required type="number" step="0.01" placeholder="0.00" value={amount} onChange={e => setAmount(e.target.value)} className="w-full bg-slate-50 border-2 border-slate-100 rounded-xl pl-9 p-3 text-sm font-bold outline-none focus:bg-white focus:border-indigo-500 transition-colors" />
+                <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 font-bold text-sm">RM</span>
+                <input required type="number" step="0.01" placeholder="0.00" value={amount} onChange={e => setAmount(e.target.value)} className="w-full bg-slate-800/50 border-2 border-slate-700/50 rounded-xl pl-9 p-3 text-sm font-bold text-slate-100 outline-none focus:bg-slate-800 focus:border-indigo-500 transition-colors placeholder:text-slate-500" />
               </div>
-              <input required type="date" value={dueDate} onChange={e => setDueDate(e.target.value)} className="flex-1 bg-slate-50 border-2 border-slate-100 rounded-xl p-3 text-sm font-bold outline-none focus:bg-white focus:border-indigo-500 transition-colors text-slate-600" />
+              <input required type="date" value={dueDate} onChange={e => setDueDate(e.target.value)} className="flex-1 bg-slate-800/50 border-2 border-slate-700/50 rounded-xl p-3 text-sm font-bold text-slate-100 outline-none focus:bg-slate-800 focus:border-indigo-500 transition-colors text-slate-200" />
             </div>
             <button type="submit" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-xl text-sm font-bold shadow-[0_4px_14px_0_rgb(79,70,229,0.39)] transition-colors">Save Bill</button>
           </form>
@@ -69,25 +69,25 @@ export default function Bills() {
             const dueSoon = !paid && isDueSoon(bill.dueDate);
             
             return (
-              <div key={bill.id} className={`glass-card p-5 flex justify-between items-center relative overflow-hidden group ${paid ? 'opacity-60 grayscale-[30%]' : ''}`}>
+              <div key={bill.id} className={`glass-card p-5 flex justify-between items-center relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 ${paid ? 'opacity-40 grayscale-[30%]' : ''}`}>
                 <div className={`absolute left-0 top-0 bottom-0 w-1.5 ${paid ? 'bg-emerald-500' : dueSoon ? 'bg-rose-500' : 'bg-indigo-500'}`}></div>
                 
                 <div className="pl-3 flex items-center gap-4">
-                  <div className={`p-2.5 rounded-xl ${paid ? 'bg-emerald-100 text-emerald-600' : dueSoon ? 'bg-rose-100 text-rose-600' : 'bg-indigo-100 text-indigo-600'}`}>
+                  <div className={`p-2.5 rounded-xl ${paid ? 'bg-emerald-900/30 text-emerald-400' : dueSoon ? 'bg-rose-900/30 text-rose-400' : 'bg-indigo-900/30 text-indigo-400'}`}>
                     {paid ? <CheckCircle2 className="w-5 h-5" /> : dueSoon ? <AlertCircle className="w-5 h-5" /> : <Clock className="w-5 h-5" />}
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-800 text-lg">{bill.title}</h3>
-                    <p className={`text-xs font-bold mt-0.5 ${paid ? 'text-emerald-600' : dueSoon ? 'text-rose-500' : 'text-slate-500'}`}>
+                    <h3 className="font-bold text-slate-100 text-lg leading-tight">{bill.title}</h3>
+                    <p className={`text-xs font-bold mt-1 ${paid ? 'text-emerald-500' : dueSoon ? 'text-rose-400' : 'text-slate-400'}`}>
                       {paid ? 'Paid' : `Due: ${bill.dueDate}`}
                     </p>
                   </div>
                 </div>
                 
                 <div className="text-right">
-                  <p className="font-extrabold text-xl text-slate-800">RM {bill.amount.toFixed(2)}</p>
+                  <p className="font-extrabold text-xl text-slate-100">RM {bill.amount.toFixed(2)}</p>
                   {!paid && (
-                    <button onClick={() => handleMarkPaid(bill.id)} className="text-[10px] uppercase tracking-wider text-indigo-600 font-extrabold mt-1 hover:text-indigo-800 transition-colors bg-indigo-50 px-2 py-1 rounded-md opacity-0 group-hover:opacity-100">
+                    <button onClick={() => handleMarkPaid(bill.id)} className="text-[10px] uppercase tracking-wider text-indigo-400 font-extrabold mt-1 hover:text-indigo-300 transition-colors bg-indigo-900/30 border border-indigo-900/50 px-2 py-1 rounded-md opacity-0 group-hover:opacity-100">
                       Mark Paid
                     </button>
                   )}
@@ -96,11 +96,12 @@ export default function Bills() {
             );
           })
         ) : (
-          <div className="text-center py-12 bg-slate-50/50 rounded-2xl border border-dashed border-slate-200">
-            <p className="text-slate-400 font-medium text-sm">No upcoming bills.</p>
+          <div className="text-center py-12 bg-slate-800/30 rounded-2xl border border-dashed border-slate-700">
+            <p className="text-slate-500 font-medium text-sm">No upcoming bills.</p>
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 }
